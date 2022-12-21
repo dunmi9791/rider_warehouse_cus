@@ -1,5 +1,51 @@
 <odoo>
   <data>
+    <!-- Inherit Form View to Modify it -->
+    <record id="stock_picking_inherit" model="ir.ui.view">
+        <field name="name">inherit.stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='extra']" position="inside">
+                <!-- Add your fields or attributes here -->
+                <group>
+                    <group>
+                        <field name="delivery_driver"/>
+                        <field name="company_3pl"/>
+                        <field name="phone_3pl"/>
+                        <field name="vehicle_reg"/>
+                    </group>
+                    <group>
+                        <field name="temp_at_pick"/>
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+      <record id="temp_action" model="ir.actions.act_window">
+          <field name="name">temp.action</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">temperature.history</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <!-- Inherit Form View to Modify it -->
+      <record id="stock_location_inherit" model="ir.ui.view">
+          <field name="name">stock.location.inherit</field>
+          <field name="model">stock.location</field>
+          <field name="inherit_id" ref="stock.view_location_form"/>
+          <field name="arch" type="xml">
+
+              <xpath expr="//button[@name='219']" position="before">
+                  <!-- Add your fields or attributes here -->
+                  <button string="Temperature history" class="oe_stat_button" icon="fa-cubes" name="riders_warehouse_custom.temp_action" type="action"/>
+              </xpath>
+
+          </field>
+      </record>
+
     <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="riders_warehouse_custom.list">

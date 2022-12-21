@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_riders_warehouse_custom_riders_warehouse_custom,riders_warehouse_custom.riders_warehouse_custom,model_riders_warehouse_custom_riders_warehouse_custom,base.group_user,1,1,1,1
+access_temperature_history,riders.warehouse_temperature,model_temperature_history,base.group_user,1,1,1,1
