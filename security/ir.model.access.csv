@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_temperature_history,riders.warehouse_temperature,model_temperature_history,base.group_user,1,1,1,1
+access_temperature_device,riders.warehouse_device,model_temperature_device,base.group_user,1,1,1,1
+access_sensor_data,riders.warehouse_data,model_sensor_data,base.group_user,1,1,1,1

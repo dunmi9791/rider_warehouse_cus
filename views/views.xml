@@ -45,6 +45,99 @@
 
           </field>
       </record>
+      <record id="view_sensor_data_form" model="ir.ui.view">
+            <field name="name">sensor.data.form</field>
+            <field name="model">sensor.data</field>
+            <field name="arch" type="xml">
+                <form string="Sensor Data">
+                    <sheet>
+                        <group>
+                            <field name="temperature"/>
+                            <field name="temperature1"/>
+                            <field name="humidity"/>
+                            <field name="humidity1"/>
+                            <field name="light"/>
+                            <field name="vibration"/>
+                            <field name="voltage"/>
+                            <field name="battery"/>
+                            <field name="rssi"/>
+                            <field name="lat_lng"/>
+                            <field name="base_station"/>
+                            <field name="io"/>
+                            <field name="rtc"/>
+                            <field name="rtc_datetime"/>
+                            <field name="create_time"/>
+                            <field name="create_time_datetime"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sensor_data_tree" model="ir.ui.view">
+            <field name="name">sensor.data.tree</field>
+            <field name="model">sensor.data</field>
+            <field name="arch" type="xml">
+                <tree string="Sensor Data">
+                    <field name="temperature"/>
+                    <field name="temperature1"/>
+                    <field name="humidity"/>
+                    <field name="humidity1"/>
+                    <field name="light"/>
+                    <field name="vibration"/>
+                    <field name="voltage"/>
+                    <field name="battery"/>
+                    <field name="rssi"/>
+                    <field name="lat_lng"/>
+                    <field name="base_station"/>
+                    <field name="io"/>
+                    <field name="rtc"/>
+                    <field name="rtc_datetime"/>
+                    <field name="create_time"/>
+                    <field name="create_time_datetime"/>
+                </tree>
+            </field>
+        </record>
+      <record id="temperature_device_tree" model="ir.ui.view">
+          <field name="name">temperature.device.tree</field>
+          <field name="model">temperature.device</field>
+          <field name="arch" type="xml">
+              <tree string="Temperature Devices">
+                  <field name="device_name"/>
+                  <field name="device_id"/>
+                  <field name="serial_no"/>
+                  <field name="location_id"/>
+              </tree>
+          </field>
+
+      </record>
+      <record id="temperature_device_view_form" model="ir.ui.view">
+          <field name="name">temperature_device_view_form</field>
+          <field name="model">temperature.device</field>
+          <field name="arch" type="xml">
+              <form string="temperature device form">
+                  <sheet>
+                      <group>
+                          <group>
+                              <field name="device_name"/>
+                               <field name="location_id"/>
+                          </group>
+                          <group>
+                              <field name="device_id"/>
+                              <field name="serial_no"/>
+                          </group>
+
+                      </group>
+                      <notebook>
+                          <page string="Sensor Logs">
+                              <field name="sensor_data_ids"/>
+                          </page>
+                      </notebook>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
 
     <!-- explicit list view definition -->
 <!--

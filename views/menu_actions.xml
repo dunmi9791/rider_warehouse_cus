@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record id="action_sensor_data" model="ir.actions.act_window">
+            <field name="name">Sensor Data</field>
+            <field name="res_model">sensor.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    <record id="action_temperature_device" model="ir.actions.act_window">
+            <field name="name">Temperature Device</field>
+            <field name="res_model">temperature.device</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    <menuitem id="menu_sensor_data" name="Sensor Data" sequence="10"/>
+        <menuitem id="submenu_sensor_data" name="Sensor Data" parent="stock.menu_warehouse_config" action="action_sensor_data" sequence="11"/>
+    <menuitem id="submenu_temperature_device" name="Sensor Devices" parent="stock.menu_warehouse_config" action="action_temperature_device" sequence="10"/>
+
+</odoo>
