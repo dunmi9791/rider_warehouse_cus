@@ -4,5 +4,5 @@ from . import models
 from . import warehouse
 from . import temperature
 from . import get_temp_data
-# from . import settings
+from . import settings
 

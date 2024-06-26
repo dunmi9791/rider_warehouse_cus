@@ -4,7 +4,7 @@ from odoo import models, fields, api
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    app_id = fields.Char('App ID')
+    app_id = fields.Char(string='App ID')
     app_key = fields.Char('App Key')
     app_secret = fields.Char('App Secret')
 
