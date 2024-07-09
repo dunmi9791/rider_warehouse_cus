@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="riders_warehouse_custom.stock_dashboard" owl="1">
+        <div class="vh-100 overflow-auto bg-muted">
+            <div class="row m-3">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h1 class="text-primary fw-bold">Warehouse Temperature Dashboard</h1>
+                                    <div>
+                                        <select class="form-select">
+                                            <option value="0">Choose Warehouse</option>
+                                            <option value="1">Gambia</option>
+                                            <option value="2">Malawi</option>
+                                            <option value="3">Lesotho</option>
+                                        </select>
+                                    </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                        <div class="row">
+                            <KpiCard name="'The Gambia SDH (-30)'" value="10" percentage="6"/>
+                            <KpiCard name="'The Gambia BK (-30)'" value="10" percentage="6"/>
+                            <KpiCard name="'The Gambia FT (-30)'" value="10" percentage="6"/>
+                            <KpiCard name="'Average'" value="10" percentage="6"/>
+                        </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row">
+
+                    </div>
+
+            </div>
+        </div>
+            </div>
+        </div>
+    </t>
+</templates>
