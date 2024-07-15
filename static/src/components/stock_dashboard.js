@@ -97,7 +97,7 @@ export class StockDashboard extends Component {
     }
 }
 
-StockDashboard.template = "riders_warehouse_cus.stock_dashboard";
+StockDashboard.template = "rider_warehouse_cus.stock_dashboard";
 StockDashboard.components = { KpiCard };
 
-registry.category("actions").add("riders_warehouse_cus.stock_dashboard", StockDashboard);
+registry.category("actions").add("rider_warehouse_cus.stock_dashboard", StockDashboard);
