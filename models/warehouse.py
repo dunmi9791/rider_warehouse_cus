@@ -27,3 +27,10 @@ class AccountAsset(models.Model):
         required=False)
 
 
+class StockLocation(models.Model):
+    _inherit = 'stock.location'
+
+    is_warehouse = fields.Boolean(
+        string='Is Warehouse',
+        required=False)
+

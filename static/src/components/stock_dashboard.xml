@@ -9,34 +9,22 @@
                             <div class="shadow-sm border m-2 p-4 bg-white">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h1 class="text-primary fw-bold">Warehouse Temperature Dashboard</h1>
-                                    <div>
-                                        <select class="form-select">
-                                            <option value="0">Choose Warehouse</option>
-                                            <option value="1">Gambia</option>
-                                            <option value="2">Malawi</option>
-                                            <option value="3">Lesotho</option>
-                                        </select>
-                                    </div>
-
-
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                        <div class="row">
-                            <KpiCard name="'The Gambia SDH (-30)'" value="10" percentage="6"/>
-                            <KpiCard name="'The Gambia BK (-30)'" value="10" percentage="6"/>
-                            <KpiCard name="'The Gambia FT (-30)'" value="10" percentage="6"/>
-                            <KpiCard name="'Average'" value="10" percentage="6"/>
-                        </div>
+                    <div class="row">
+                        <KpiCard name="'The Gambia SDH (-30)'" value="state.gambiaSDH.value" percentage="state.gambiaSDH.percentage"/>
+                        <KpiCard name="'The Gambia BK (-30)'" value="state.gambiaBK.value" percentage="state.gambiaBK.percentage"/>
+                        <KpiCard name="'The Gambia FT (-30)'" value="state.gambiaFT.value" percentage="state.gambiaFT.percentage"/>
+                        <KpiCard name="'Average'" value="state.average.value" percentage="state.average.percentage"/>
+                    </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="row">
-
+                        <!-- Additional content for the right column can be added here -->
                     </div>
-
-            </div>
-        </div>
+                </div>
             </div>
         </div>
     </t>

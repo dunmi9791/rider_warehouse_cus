@@ -43,7 +43,8 @@ class TemperatureLog(models.Model):
        required=False)
     device_id = fields.Char(string='Device ID', required=False)
     serial_no = fields.Char(string='Serial Number', required=False)
-    location_id = fields.Many2one(comodel_name='stock.location', string='Location', required=False)
+    location_id = fields.Many2one(comodel_name='stock.location', string='Location',
+                                  domain=[('is_warehouse', '=', True)], required=False)
     sensor_data_ids = fields.One2many(comodel_name='sensor.data',inverse_name='device_id', string='Sensor data',
                                       required=False)
 
