@@ -47,48 +47,43 @@ export class StockDashboard extends Component {
         });
     }
 
-    async getAuthToken() {
+   async getAuthToken() {
         try {
-            const response = await fetch('https://i.cloud.tzonedigital.cn/Identity?appId=5c1169a48591411eac78dc528155f40e&appKey=User-2507&appSecret=NGYxZDQ2MWIwZWViNDFjMmEzMzUxMzIxNTQ4MzBmNDQ=');
+            const response = await fetch('http://localhost:3000/proxy/identity');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            if (data.code && data.code !== 200) {
-                throw new Error(`API error! message: ${data.message}`);
+            console.log('Auth Token Response:', data); // Log the response data
+            if (data.status !== 1) {
+                throw new Error(`API error! message: ${data.msg}`);
             }
-            return data.token; // Adjust according to the actual response structure
+            return data.body.token; // Adjust according to the actual response structure
         } catch (error) {
             console.error('Error fetching authentication token:', error);
             throw error;
         }
     }
 
-    async fetchTemperatureData(serialNumber, stateKey) {
+     async fetchTemperatureData(serialNumber, stateKey) {
         try {
-            const response = await fetch(`https://i.cloud.tzonedigital.cn/Data/Realtime/${serialNumber}`, {
-                headers: {
-                    'Authorization': `Bearer ${this.state.token}`
-                }
-            });
+            const response = await fetch(`http://localhost:3000/proxy/data/${serialNumber}?token=${this.state.token}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            if (data.code && data.code !== 200) {
-                throw new Error(`API error! message: ${data.message}`);
+            console.log(`${stateKey} Temperature Data:`, data); // Log the response data
+            if (data.status !== 1) {
+                throw new Error(`API error! message: ${data.msg}`);
             }
-            // Assuming the temperature value is directly available in the response
-            // Adjust according to the actual data structure
-            this.state[stateKey].value = data.temperature;
+            // Assuming the temperature value is in data.body.temperature
+            this.state[stateKey].value = data.body.temperature;
             // Example percentage calculation (customize as needed)
-            this.state[stateKey].percentage = (data.temperature / 100) * 100;
-            console.log(`${stateKey} Temperature Data:`, data);
+            this.state[stateKey].percentage = (data.body.temperature / 100) * 100;
         } catch (error) {
             console.error(`Error fetching temperature data for ${serialNumber}:`, error);
         }
     }
-
     calculateAverageTemperature() {
         const total = this.state.gambiaSDH.value + this.state.gambiaBK.value + this.state.gambiaFT.value;
         const average = total / 3;
