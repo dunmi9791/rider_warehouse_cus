@@ -87,8 +87,8 @@ export class StockDashboard extends Component {
     calculateAverageTemperature() {
         const total = this.state.gambiaSDH.value + this.state.gambiaBK.value + this.state.gambiaFT.value;
         const average = total / 3;
-        this.state.average.value = average;
-        this.state.average.percentage = (average / 100) * 100;
+        this.state.average.value = parseFloat(average.toFixed(2));
+        this.state.average.percentage = parseFloat(((average / 100) * 100).toFixed(2));
     }
 }
 
