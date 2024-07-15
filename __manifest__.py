@@ -36,9 +36,9 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'riders_warehouse_custom/static/src/components/**/*.js',
-            'riders_warehouse_custom/static/src/components/**/*.xml',
-            'riders_warehouse_custom/static/src/components/**/*.scss',
+            'rider_warehouse_cus/static/src/components/**/*.js',
+            'rider_warehouse_cus/static/src/components/**/*.xml',
+            'rider_warehouse_cus/static/src/components/**/*.scss',
         ],
     },
 }

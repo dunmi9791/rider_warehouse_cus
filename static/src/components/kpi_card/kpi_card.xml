@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-    <t t-name="riders_warehouse_custom.kpi_card" owl="1">
+    <t t-name="rider_warehouse_cus.kpi_card" owl="1">
         <div class="col-lg-3 m-0 p-0">
             <div class="shadow-sm border m-2 p-4 bg-white text-center">
                 <div class="h1 fw-bold text-dark" style="font-size: 48px"><span t-esc="props.value"/></div>

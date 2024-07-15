@@ -4,4 +4,4 @@ const { Component } = owl
 
 export class KpiCard extends Component {}
 
-KpiCard.template = "riders_warehouse_custom.kpi_card"
+KpiCard.template = "rider_warehouse_cus.kpi_card"
