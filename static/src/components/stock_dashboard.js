@@ -49,7 +49,7 @@ export class StockDashboard extends Component {
 
    async getAuthToken() {
         try {
-            const response = await fetch('http://localhost:3000/proxy/identity');
+            const response = await fetch('http://10.10.0.1:3000/proxy/identity');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -67,7 +67,7 @@ export class StockDashboard extends Component {
 
      async fetchTemperatureData(serialNumber, stateKey) {
         try {
-            const response = await fetch(`http://localhost:3000/proxy/data/${serialNumber}?token=${this.state.token}`);
+            const response = await fetch(`http://10.10.0.1:3000/proxy/data/${serialNumber}?token=${this.state.token}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
