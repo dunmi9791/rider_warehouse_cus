@@ -12,8 +12,8 @@ class SensorDataImport(models.Model):
 
     @api.model
     def fetch_and_import_data(self):
-        proxy_auth_url = 'http://10.10.0.1:3000/proxy/identity'
-        proxy_history_url = 'http://10.10.0.1:3000/proxy/history'
+        proxy_auth_url = 'https://api.secteurnetworks.com/proxy/identity'
+        proxy_history_url = 'https://api.secteurnetworks.com/proxy/history'
 
         try:
             # Authenticate and get token
