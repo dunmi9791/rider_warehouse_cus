@@ -22,6 +22,18 @@ export class StockDashboard extends Component {
                 value: 0,
                 percentage: 0,
             },
+            malawi: {
+                value: 0,
+                percentage: 0,
+            },
+            lesotho: {
+                value: 0,
+                percentage: 0,
+            },
+            device: {
+                value: 0,
+                percentage: 0,
+            },
             average: {
                 value: 0,
                 percentage: 0,
@@ -40,6 +52,9 @@ export class StockDashboard extends Component {
                 await this.fetchTemperatureData('66519', 'gambiaSDH'); // Fetch for Gambia SDH
                 await this.fetchTemperatureData('66518', 'gambiaBK'); // Fetch for Gambia BK
                 await this.fetchTemperatureData('66515', 'gambiaFT'); // Fetch for Gambia FT
+                await this.fetchTemperatureData('35544', 'lesotho'); // Fetch for Lesotho
+                await this.fetchTemperatureData('66517', 'malawi'); // Fetch for Malawi
+                await this.fetchTemperatureData('66520', 'device'); // Fetch for Gambia FT
                 this.calculateAverageTemperature();
             } catch (error) {
                 console.error('Error during setup:', error);
