@@ -25,6 +25,7 @@ class AccountAsset(models.Model):
     vehicle_reg = fields.Char(
         string='Vehicle registration',
         required=False)
+    assigned_picker = fields.Many2one(comodel_name='res.users', string='Assigned Picker', required=False)
 
 
 class StockLocation(models.Model):
@@ -33,4 +34,6 @@ class StockLocation(models.Model):
     is_warehouse = fields.Boolean(
         string='Is Warehouse',
         required=False)
+    min_temp = fields.Float(string='Minimum Temperature')
+    max_temp = fields.Float(string='Maximum Temperature')
 

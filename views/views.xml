@@ -6,6 +6,9 @@
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="assigned_picker"/>
+            </xpath>
 
             <xpath expr="//page[@name='extra']" position="inside">
                 <!-- Add your fields or attributes here -->

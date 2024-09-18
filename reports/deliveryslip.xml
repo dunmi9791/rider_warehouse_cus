@@ -29,25 +29,51 @@
                 <td style="width: 33%; text-align: center;">
                     <strong>Dispatcher Signature</strong>
                     <div style="border-bottom: 1px solid #000; height: 50px;"></div>
-                    <p>Name: _____________________</p>
-                    <p>Date: _____________________</p>
-                </td>
-                <td style="width: 33%; text-align: center;">
-                    <strong>Recipient Signature</strong>
-                    <div style="border-bottom: 1px solid #000; height: 50px;"></div>
-                    <p>Name: _____________________</p>
+                    <p>Name: <span t-field="o.user_id.name"/></p>
                     <p>Date: _____________________</p>
                 </td>
                 <td style="width: 33%; text-align: center;">
                     <strong>Driver Signature</strong>
                     <div style="border-bottom: 1px solid #000; height: 50px;"></div>
-                    <p>Name: _____________________</p>
+                    <p>Name: <span t-field="o.delivery_driver"/></p>
+                    <p>Date: _____________________</p>
+                </td>
+                <td style="width: 33%; text-align: center;">
+                    <strong>Recipient Signature</strong>
+                    <div style="border-bottom: 1px solid #000; height: 50px;"></div>
+                    <p>Name: <span t-field="o.partner_id.name"/></p>
                     <p>Date: _____________________</p>
                 </td>
             </tr>
         </table>
     </div>
 </xpath>
+
+    </template>
+    <template id="picking_report_custom" inherit_id="stock.report_picking">
+        <xpath expr="//div[@name='div_state']" position="after">
+             <div t-if="o.assigned_picker" class="col-auto" name="div_picker_field">
+                <strong>Assigned Picker:</strong>
+                <p t-field="o.assigned_picker"/>
+            </div>
+
+        </xpath>
+        <xpath expr="//div[@class='page']" position="after">
+             <div class="mt32" style="page-break-inside: avoid;">
+        <table class="table table-sm" style="width: 33%; margin-top: 60px;">
+            <tr>
+                <td style="width: 33%; text-align: center;">
+                    <strong>Dispatcher Signature</strong>
+                    <div style="border-bottom: 1px solid #000; height: 50px;"></div>
+                    <p>Name: <span t-field="o.user_id.name"/></p>
+                    <p>Date: _____________________</p>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+        </xpath>
 
     </template>
 </odoo>
