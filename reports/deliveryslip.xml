@@ -1,0 +1,53 @@
+<odoo>
+    <template id="report_deliveryslip_custom" inherit_id="stock.report_delivery_document">
+        <xpath expr="//div[@name='div_sched_date']" position="after">
+            <div t-if="o.temp_at_pick" class="col-auto" name="div_custom_field">
+                <strong>Temperature At Pickup:</strong>
+                <p t-field="o.temp_at_pick"/>
+            </div>
+            <div t-if="o.delivery_driver" class="col-auto" name="div_driver_field">
+                <strong>Delivery Information:</strong>
+                <p>
+                    <strong>Driver:</strong>
+                    <span t-field="o.delivery_driver"/>
+                </p>
+                <p>
+                    <strong>Company:</strong>
+                    <span t-field="o.company_3pl"/>
+                </p>
+                <p>
+                    <strong>Vehicle Reg:</strong>
+                    <span t-field="o.vehicle_reg"/>
+                </p>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='signature']" position="before">
+    <!-- Signature Section -->
+    <div class="mt32" style="page-break-inside: avoid;">
+        <table class="table table-sm" style="width: 100%; margin-top: 60px;">
+            <tr>
+                <td style="width: 33%; text-align: center;">
+                    <strong>Dispatcher Signature</strong>
+                    <div style="border-bottom: 1px solid #000; height: 50px;"></div>
+                    <p>Name: _____________________</p>
+                    <p>Date: _____________________</p>
+                </td>
+                <td style="width: 33%; text-align: center;">
+                    <strong>Recipient Signature</strong>
+                    <div style="border-bottom: 1px solid #000; height: 50px;"></div>
+                    <p>Name: _____________________</p>
+                    <p>Date: _____________________</p>
+                </td>
+                <td style="width: 33%; text-align: center;">
+                    <strong>Driver Signature</strong>
+                    <div style="border-bottom: 1px solid #000; height: 50px;"></div>
+                    <p>Name: _____________________</p>
+                    <p>Date: _____________________</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</xpath>
+
+    </template>
+</odoo>

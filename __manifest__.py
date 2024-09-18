@@ -29,6 +29,7 @@
         'views/menu_actions.xml',
         'views/views.xml',
         'views/templates.xml',
+        'reports/deliveryslip.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
