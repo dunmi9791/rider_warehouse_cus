@@ -30,6 +30,7 @@
         'views/views.xml',
         'views/templates.xml',
         'reports/deliveryslip.xml',
+        'demo/scheduled_actions.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
