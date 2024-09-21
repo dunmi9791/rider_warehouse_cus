@@ -3,3 +3,4 @@ access_temperature_history,riders.warehouse_temperature,model_temperature_histor
 access_temperature_device,riders.warehouse_device,model_temperature_device,base.group_user,1,1,1,1
 access_sensor_data,riders.warehouse_data,model_sensor_data,base.group_user,1,1,1,1
 access_sensor_data_import,riders.import_data,model_sensor_data_import,base.group_user,1,1,1,1
+access_location_temp_data,riders.location_temp,model_location_temp_data,base.group_user,1,1,1,1

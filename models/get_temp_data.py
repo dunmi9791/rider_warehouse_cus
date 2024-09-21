@@ -59,7 +59,7 @@ class SensorDataImport(models.Model):
                 temperature_device_model = self.env['temperature.device']
 
                 for item in data['body']['dataList']:
-                    device_record = temperature_device_model.search([('device_id', '=', device_id)], limit=1)
+                    device_record = temperature_device_model.search([('serial_no', '=', device_id)], limit=1)
                     if device_record:
                         sensor_data_model.create({
                             'device_id': device_record.id,

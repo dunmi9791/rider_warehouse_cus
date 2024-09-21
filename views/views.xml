@@ -44,6 +44,30 @@
                   <!-- Add your fields or attributes here -->
                   <field name="is_warehouse"/>
               </xpath>
+              <xpath expr="//group[@name='additional_info']" position="after">
+                  <!-- Add your fields or attributes here -->
+                  <group>
+                      <field name="min_temp"/>
+                      <field name="max_temp"/>
+                      <field name="latest_temp"/>
+                  </group>
+              </xpath>
+              <xpath expr="//field[@name='comment']" position="after">
+                  <!-- Add your fields or attributes here -->
+                  <notebook>
+                      <page string="Temperature History">
+                          <field name="temperature_data_ids">
+                               <tree string="Temperature History">
+                                   <field name="date_time"/>
+                                   <field name="temperature"/>
+                               </tree>
+                          </field>
+
+                      </page>
+
+                  </notebook>
+
+              </xpath>
 
           </field>
       </record>
