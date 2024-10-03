@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Security Group Definition -->
+    <record id="group_consignment_portal_user" model="res.groups">
+        <field name="name">Consignment Portal User</field>
+<!--        <field name="category_id" ref="base.module_category_portal"/>-->
+        <!-- Inherit from the base portal group -->
+        <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+    </record>
+    <record id="rule_stock_picking_portal" model="ir.rule">
+    <field name="name">Stock Picking Portal User</field>
+    <field name="model_id" ref="stock.model_stock_picking"/>
+    <field name="groups" eval="[(4, ref('rider_warehouse_cus.group_consignment_portal_user'))]"/>
+    <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_write" eval="False"/>
+    <field name="perm_create" eval="False"/>
+    <field name="perm_unlink" eval="False"/>
+</record>
+</odoo>

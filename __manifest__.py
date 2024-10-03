@@ -20,11 +20,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock', 'website', 'board',],
+    'depends': ['base', 'stock', 'website', 'board','portal',],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'views/res_config_settings_views.xml',
         'views/menu_actions.xml',
         'views/views.xml',

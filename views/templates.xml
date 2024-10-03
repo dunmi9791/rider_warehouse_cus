@@ -1,24 +1,13 @@
 <odoo>
-    <data>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
+<template id="portal_my_consignment" inherit_id="portal.portal_my_home" name="My Consignments">
+     <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+         <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Consignments</t>
+                <t t-set="url" t-value="'/my/consignments'"/>
+                <t t-set="placeholder_count" t-value="'consignment_count'"/>
             </t>
-          </dl>
-        </template>
--->
-    </data>
+    </xpath>
+</template>
+
+
 </odoo>

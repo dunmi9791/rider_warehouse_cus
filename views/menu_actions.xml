@@ -15,9 +15,25 @@
         <field name="name">Stock Dashboard</field>
         <field name="tag">rider_warehouse_cus.stock_dashboard</field>
     </record>
+    <record id="action_consignment_portal" model="ir.actions.act_window">
+    <field name="name">My Consignments</field>
+    <field name="res_model">stock.picking</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('partner_id', '=', user.partner_id.id)]</field>
+</record>
+    <record id="action_stock_move_portal" model="ir.actions.act_window">
+    <field name="name">Stock Moves</field>
+    <field name="res_model">stock.move</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('picking_id.partner_id', '=', user.partner_id.id)]</field>
+</record>
     <menuitem id="menu_sensor_data" name="Sensor Data" sequence="10"/>
         <menuitem id="submenu_sensor_data" name="Sensor Data" parent="stock.menu_warehouse_config" action="action_sensor_data" sequence="11"/>
     <menuitem id="submenu_temperature_device" name="Sensor Devices" parent="stock.menu_warehouse_config" action="action_temperature_device" sequence="10"/>
     <menuitem id="menu_owl_stock_dashboard" name="Stock Dashboard" parent="stock.menu_stock_root" action="action_owl_stock_dashboard" sequence="1"/>
+
+
+
+
 
 </odoo>
