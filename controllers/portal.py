@@ -10,6 +10,7 @@ from odoo.addons.payment import utils as payment_utils
 from odoo.addons.portal.controllers.mail import _message_post_helper
 from odoo.addons.portal.controllers import portal
 from odoo.addons.portal.controllers.portal import pager as portal_pager
+from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
 class CustomerPortal(portal.CustomerPortal):
@@ -30,3 +31,4 @@ class CustomerPortal(portal.CustomerPortal):
             ('message_partner_ids', 'child_of', [partner.commercial_partner_id.id]),
             ('state', 'in', ['waiting', 'done'])
         ]
+

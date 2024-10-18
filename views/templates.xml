@@ -3,10 +3,68 @@
      <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
          <t t-call="portal.portal_docs_entry">
                 <t t-set="title">Consignments</t>
-                <t t-set="url" t-value="'/my/consignments'"/>
+                <t t-set="url" t-value="'/my/consignment_products'"/>
                 <t t-set="placeholder_count" t-value="'consignment_count'"/>
             </t>
     </xpath>
+
+</template>
+
+
+    <template id="portal_my_stock_moves" name="Portal Stock Moves">
+    <div class="container">
+        <h2>Your Stock Moves</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Source Location</th>
+                    <th>Destination Location</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="stock_moves" t-as="move">
+                    <tr>
+                        <td><t t-esc="move.product_id.name" /></td>
+                        <td><t t-esc="move.location_id.name" /></td>
+                        <td><t t-esc="move.location_dest_id.name" /></td>
+                        <td><t t-esc="move.product_qty" /></td>
+                        <td><t t-esc="move.state" /></td>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+    </div>
+</template>
+    <template id="portal_my_consignment_products" name="Portal Consignment Products">
+        <t t-call="portal.portal_layout">
+    <div class="container">
+        <h2>Your Consignment Products</h2>
+        <t t-call="portal.portal_table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Location</th>
+                    <th>Quantity</th>
+                    <th>Reserved Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="quants" t-as="quant">
+                    <tr>
+                        <td><t t-esc="quant.product_id.name" /></td>
+                        <td><t t-esc="quant.location_id.display_name" /></td>
+                        <td><t t-esc="quant.quantity" /></td>
+                        <td><t t-esc="quant.reserved_quantity" /></td>
+                    </tr>
+                </t>
+            </tbody>
+            </t>
+
+    </div>
+        </t>
 </template>
 
 
