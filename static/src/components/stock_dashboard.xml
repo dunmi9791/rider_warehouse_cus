@@ -15,14 +15,14 @@
                     </div>
                     <div class="row">
                         <KpiCard name="'The Gambia SDH (-30)'" value="state.gambiaSDH.value" percentage="state.gambiaSDH.percentage"/>
-                        <KpiCard name="'Malawi FT (2-8)'" value="state.gambiaBK.value" percentage="state.gambiaBK.percentage"/>
+                        <KpiCard name="'The Gambia FT'" value="state.gambiaBK.value" percentage="state.gambiaBK.percentage"/>
                         <KpiCard name="'The Gambia BK (-30)'" value="state.gambiaFT.value" percentage="state.gambiaFT.percentage"/>
                         <KpiCard name="'Average'" value="state.average.value" percentage="state.average.percentage"/>
                     </div>
                     <div class="row">
                         <KpiCard name="'Lesotho'" value="state.lesotho.value" percentage="state.lesotho.percentage"/>
                         <KpiCard name="'Malawi SDH (2-8)'" value="state.malawi.value" percentage="state.malawi.percentage"/>
-                        <KpiCard name="'Device 6'" value="state.device.value" percentage="state.device.percentage"/>
+                        <KpiCard name="'Lesotho Front'" value="state.device.value" percentage="state.device.percentage"/>
 
                     </div>
                 </div>
