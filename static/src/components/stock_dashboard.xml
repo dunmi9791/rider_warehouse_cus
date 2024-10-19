@@ -17,7 +17,7 @@
                         <KpiCard name="'The Gambia SDH (-30)'" value="state.gambiaSDH.value" percentage="state.gambiaSDH.percentage"/>
                         <KpiCard name="'The Gambia FT'" value="state.gambiaBK.value" percentage="state.gambiaBK.percentage"/>
                         <KpiCard name="'The Gambia BK (-30)'" value="state.gambiaFT.value" percentage="state.gambiaFT.percentage"/>
-                        <KpiCard name="'Average'" value="state.average.value" percentage="state.average.percentage"/>
+                        <KpiCard name="'Average 7'" value="state.average.value" percentage="state.average.percentage"/>
                     </div>
                     <div class="row">
                         <KpiCard name="'Lesotho'" value="state.lesotho.value" percentage="state.lesotho.percentage"/>
