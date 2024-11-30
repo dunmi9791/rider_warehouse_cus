@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock', 'website', 'board','portal',],
+    'depends': ['base', 'stock', 'website', 'board','portal','stock_picking_batch'],
 
     # always loaded
     'data': [
@@ -31,6 +31,7 @@
         'views/views.xml',
         'views/templates.xml',
         'reports/deliveryslip.xml',
+        'reports/riders_report_batch.xml',
         'demo/scheduled_actions.xml',
     ],
     # only loaded in demonstration mode
